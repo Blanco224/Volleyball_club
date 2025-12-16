@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勤益排球社</title>
+
+<style>
+:root{
+  --blue-dark:#0f4c81;
+  --blue:#3b82c4;
+  --yellow:#facc15;
+  --bg:#f8fafc;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial;}
+body{background:var(--bg);color:#333}
+
+/* ===== Header ===== */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  background:linear-gradient(90deg,var(--blue-dark),var(--blue));
+  color:#fff;
+}
+
+.logo{font-size:1.6rem;font-weight:800;letter-spacing:2px}
+
+.menu-btn{font-size:1.8rem;cursor:pointer;display:none}
+
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:var(--yellow)}
+
+@media(max-width:768px){
+  .menu-btn{display:block}
+  nav{
+    position:absolute;
+    top:60px;right:0;
+    background:var(--blue-dark);
+    width:220px;
+    display:none;
+  }
+  nav ul{flex-direction:column;padding:15px}
+}
+
+/* ===== Hero Carousel ===== */
+.carousel{
+  position:relative;
+  height:420px;
+  overflow:hidden;
+}
+
+.carousel img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s;
+}
+
+.carousel img.active{opacity:1}
+
+.carousel::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+}
+
+/* ===== Sections ===== */
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h2{
+  font-size:1.8rem;
+  color:var(--blue-dark);
+  margin-bottom:18px;
+  position:relative;
+}
+
+h2::before{
+  content:"";
+  position:absolute;
+  left:-15px;
+  top:50%;
+  transform:translateY(-50%);
+  width:6px;
+  height:70%;
+  background:var(--yellow);
+  border-radius:3px;
+}
+
+p{line-height:1.8}
+
+/* ===== Photo Wall ===== */
+.photo-area{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.photo-area img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  transition:transform .3s, box-shadow .3s;
+}
+
+.photo-area img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* ===== Info Card ===== */
+.info-box{
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  border-left:8px solid var(--yellow);
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+  font-size:1.05rem;
+}
+
+/* ===== Footer ===== */
+footer{
+  background:var(--blue-dark);
+  color:#fff;
+  padding:35px 20px;
+  text-align:center;
+}
+
+.contact-links{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:rgba(255,255,255,.12);
+  padding:12px 22px;
+  border-radius:40px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.contact-item img{width:26px;height:26px}
+
+.contact-item:hover{
+  background:var(--yellow);
+  color:#000;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">勤益排球社</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <ul>
+      <li><a href="#">首頁</a></li>
+      <li><a href="pm.html">幹部資訊</a></li>
+      <li><a href="active.html">過往活動</a></li>
+      <li><a href="pass.html">歷史榮耀</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <h2>排球社宗旨</h2>
+  <p>推廣排球運動，讓每位社員在球場上找到熱情、夥伴與成長。</p>
+</section>
+
+<section>
+  <h2>上課花絮</h2>
+  <div class="photo-area">
+    <img src="室內上課.jpg" width="100%" height="100%">
+    <img src="上課1.jpg">
+    <img src="上課2.jpg">
+    <img src="上課3.jpg">
+  </div>
+</section>
+
+<section>
+  <h2>社團時間與地點</h2>
+  <div class="info-box">
+    📍 勤益科技大學 排球場<br>
+    🕒 每週二、四 17:00–19:00
+  </div>
+</section>
+
+<footer>
+  <p>聯絡我們</p>
+  <div class="contact-links">
+    <a class="contact-item" href="https://www.instagram.com/ncut_18_volleyballclub/" target="_blank" class="contact-item">
+      <img src="IG.png"> Instagram
+    </a>
+    <a class="contact-item" href="https://line.me/R/ti/g/akfDGwz9ca" target="_blank" class="contact-item">
+      <img src="line.png"> LINE 官方
+    </a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById("menu");
+  m.style.display=m.style.display==="block"?"none":"block";
+}
+
+let i=0;
+const imgs=document.querySelectorAll(".carousel img");
+setInterval(()=>{
+  imgs[i].classList.remove("active");
+  i=(i+1)%imgs.length;
+  imgs[i].classList.add("active");
+},3500);
+</script>
+
+</body>
+</html>

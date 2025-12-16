@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勤益排球社｜幹部資訊</title>
+<style>
+:root{
+  --blue-dark:#0f4c81;
+  --blue:#3b82c4;
+  --yellow:#facc15;
+  --bg:#f8fafc;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial;}
+body{background:var(--bg);color:#333;}
+header{
+  background:linear-gradient(90deg,var(--blue-dark),var(--blue));
+  color:#fff;
+  padding:25px 20px 50px;
+  text-align:center;
+  position:relative;
+}
+header h1{font-size:2.2rem;letter-spacing:3px;}
+header p{opacity:.9;margin-top:8px;}
+.back-home{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  background:rgba(255,255,255,0.15);
+  padding:8px 16px;
+  border-radius:20px;
+  transition:.2s;
+}
+.back-home:hover{
+  background:rgba(250,204,21,0.85);
+  color:#0f4c81;
+}
+section{
+  max-width:800px;
+  margin:auto;
+  padding:60px 20px;
+}
+h2{
+  font-size:1.8rem;
+  color:var(--blue-dark);
+  margin-bottom:25px;
+  position:relative;
+}
+h2::before{
+  content:"";
+  position:absolute;
+  left:-15px;
+  top:50%;
+  transform:translateY(-50%);
+  width:6px;
+  height:70%;
+  background:var(--yellow);
+  border-radius:3px;
+}

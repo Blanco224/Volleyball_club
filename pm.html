@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>勤益排球社｜歷史與榮耀</title>
+<style>
+:root{
+  --blue-dark:#0f4c81;
+  --blue:#3b82c4;
+  --yellow:#facc15;
+  --bg:#f8fafc;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial;}
+body{background:var(--bg);color:#333}
+
+header{
+  background:linear-gradient(90deg,var(--blue-dark),var(--blue));
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  position:relative;
+}
+
+.back-home{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  background:rgba(255,255,255,0.15);
+  padding:8px 16px;
+  border-radius:20px;
+  transition:.2s;
+}
+
+.back-home:hover{
+  background:rgba(250,204,21,0.8);
+  color:#0f4c81;
+}
+
+.back-home:hover{
+  background:rgba(250,204,21,0.8);
+  color:#0f4c81;
+}
+header h1{font-size:2.2rem;letter-spacing:3px}
+header p{opacity:.9;margin-top:8px}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+h2{
+  font-size:1.8rem;
+  color:var(--blue-dark);
+  margin-bottom:30px;
+  position:relative;
+}
+
+h2::before{
+  content:"";
+  position:absolute;
+  left:-15px;
+  top:50%;
+  transform:translateY(-50%);
+  width:6px;
+  height:70%;
+  background:var(--yellow);
+  border-radius:3px;
+}
+
+ul.officers{
+  list-style:none;
+  padding-left:0;
+}
+ul.officers li{
+  background:#fff;
+  border-left:6px solid var(--blue-dark);
+  margin-bottom:12px;
+  padding:15px 18px;
+  border-radius:8px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.07);
+  font-size:1.1rem;
+}
+ul.officers li span{
+  font-weight:bold;
+  color:var(--blue-dark);
+  margin-left:8px;
+}
+ul.officers li .desc{
+  display:block;
+  margin-top:6px;
+  font-size:0.95rem;
+  color:#555;
+}
+/* Accordion */
+.accordion-btn{
+  width:100%;
+  text-align:left;
+  background:#f1f5f9;
+  border:none;
+  padding:12px 18px;
+  margin-bottom:5px;
+  font-weight:bold;
+  cursor:pointer;
+  border-left:6px solid var(--blue-dark);
+  border-radius:6px;
+}
+.accordion-content{
+  display:none;
+  padding:10px 20px;
+  background:#fff;
+  border-radius:6px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.05);
+}
+.accordion-content ul{
+  list-style:none;
+  padding-left:0;
+}
+.accordion-content li{
+  padding:5px 0;
+}
+footer{
+  background:var(--blue-dark);
+  color:#fff;
+  text-align:center;
+  padding:30px 15px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>幹部資訊</h1>
+  <a href="index.html" class="back-home">回到首頁</a>
+</header>
+
+<section>
+  <h2>現任幹部</h2>
+  <ul class="officers">
+    <li>社長：<span>阮郁心</span><span class="desc">負責整體社團規劃與對外聯繫</span></li>
+    <li>副社長：<span>蘇偉達</span><span class="desc">協助社長管理社務及活動籌劃</span></li>
+    <li>美宣：<span>廖家曼</span><span class="desc">管理並經營社團社群媒體帳號</span></li>
+    <li>財務：<span>胡雅慧</span><span class="desc">負責社團收支及經費管理</span></li>
+    <li>活動：<span>蔡佳穎</span><span class="desc">策劃與執行各項社團活動</span></li>
+    <li>器材：<span>邱子玄</span><span class="desc">管理排球及場地器材，確保使用安全</span></li>
+    <li>機動：<span>黃俊傑</span><span class="desc">負責隨時幫助並處理社內大小事</span></li>
+  </ul>
+</section>
+
+<section>
+  <h2>歷任幹部</h2>
+  <button class="accordion-btn">17屆</button>
+  <div class="accordion-content">
+    <ul>
+      <li>社長：蔡佳穎</li>
+      <li>副社長：胡雅慧</li>
+      <li>美宣：邱子玄</li>
+      <li>財務：王安喬</li>
+      <li>活動：黃俊傑</li>
+      <li>器材：丁鴻明</li>
+    </ul>
+  </div>
+
+  <button class="accordion-btn">16屆</button>
+  <div class="accordion-content">
+    <ul>
+      <li>社長：黃俊傑</li>
+      <li>副社長：陳小美</li>
+      <li>財務：林小雅</li>
+      <li>活動：李大華</li>
+      <li>器材：李大華</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 勤益排球社 Volleyball Club</p>
+</footer>
+
+<script>
+const accBtns = document.querySelectorAll('.accordion-btn');
+accBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  });
+});
+</script>
+</body>
+</html>
