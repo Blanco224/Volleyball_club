@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>勤益排球社｜歷史與榮耀</title>
+
 <style>
 :root{
   --blue-dark:#0f4c81;
@@ -12,59 +13,70 @@
   --bg:#f8fafc;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial;}
-body{background:var(--bg);color:#333}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Segoe UI",Arial;
+}
 
+body{
+  background:var(--bg);
+  color:#333;
+}
+
+/* ===== Header ===== */
 header{
   background:linear-gradient(90deg,var(--blue-dark),var(--blue));
   color:#fff;
-  padding:20px;
+  padding:28px 20px;
   text-align:center;
   position:relative;
 }
 
+header h1{
+  font-size:2.2rem;
+  letter-spacing:3px;
+}
+
 .back-home{
   position:absolute;
-  right:20px;
-  bottom:20px;
+  right:24px;
+  top:50%;
+  transform:translateY(-50%);
   color:#fff;
   text-decoration:none;
   font-weight:bold;
-  background:rgba(255,255,255,0.15);
-  padding:8px 16px;
-  border-radius:20px;
-  transition:.2s;
+  background:rgba(255,255,255,0.18);
+  padding:8px 18px;
+  border-radius:999px;
+  transition:.25s;
 }
 
 .back-home:hover{
-  background:rgba(250,204,21,0.8);
-  color:#0f4c81;
+  background:var(--yellow);
+  color:var(--blue-dark);
 }
 
-.back-home:hover{
-  background:rgba(250,204,21,0.8);
-  color:#0f4c81;
-}
-header h1{font-size:2.2rem;letter-spacing:3px}
-header p{opacity:.9;margin-top:8px}
-
+/* ===== Section ===== */
 section{
-  max-width:1000px;
+  max-width:1100px;
   margin:auto;
-  padding:60px 20px;
+  padding:70px 20px;
 }
 
 h2{
-  font-size:1.8rem;
+  font-size:1.9rem;
   color:var(--blue-dark);
-  margin-bottom:30px;
+  margin-bottom:40px;
   position:relative;
+  padding-left:15px;
 }
 
 h2::before{
   content:"";
   position:absolute;
-  left:-15px;
+  left:0;
   top:50%;
   transform:translateY(-50%);
   width:6px;
@@ -73,16 +85,16 @@ h2::before{
   border-radius:3px;
 }
 
-/* ===== 時間軸 ===== */
+/* ===== Timeline ===== */
 .timeline{
   position:relative;
-  margin-left:20px;
+  padding-left:30px;
 }
 
 .timeline::before{
   content:"";
   position:absolute;
-  left:0;
+  left:8px;
   top:0;
   bottom:0;
   width:4px;
@@ -92,24 +104,23 @@ h2::before{
 
 .timeline-item{
   position:relative;
-  padding-left:40px;
   margin-bottom:45px;
+  padding-left:35px;
 }
 
 .timeline-item::before{
   content:"";
   position:absolute;
-  left:-10px;
-  top:5px;
-  width:20px;
-  height:20px;
+  left:-2px;
+  top:6px;
+  width:18px;
+  height:18px;
   background:var(--yellow);
   border-radius:50%;
   border:4px solid #fff;
 }
 
 .timeline-item h3{
-  font-size:1.2rem;
   color:var(--blue-dark);
   margin-bottom:6px;
 }
@@ -118,61 +129,63 @@ h2::before{
   line-height:1.7;
 }
 
-/* ===== 社長卡片 ===== */
-.president-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-}
-
-.president-card{
-  background:#fff;
-  border-radius:16px;
-  padding:22px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-  border-top:6px solid var(--yellow);
-  transition:.3s;
-}
-
-.president-card:hover{
-  transform:translateY(-6px);
-}
-
-.president-card h3{
-  color:var(--blue-dark);
-  margin-bottom:8px;
-}
-
-.president-card span{
-  font-size:.9rem;
-  color:#666;
-}
-
-/* ===== 榮耀區 ===== */
+/* ===== Honor ===== */
 .honor-list{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
 }
 
 .honor-item{
-  background:linear-gradient(135deg,#fff,var(--bg));
-  border-left:8px solid var(--yellow);
-  padding:20px;
-  border-radius:14px;
-  box-shadow:0 6px 15px rgba(0,0,0,.08);
+  background:#fff;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  border-top:6px solid var(--yellow);
+  transition:.35s;
 }
 
-.honor-item h4{color:var(--blue-dark);margin-bottom:6px}
+.honor-item:hover{
+  transform:translateY(-10px);
+  box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
 
+.honor-item h4{
+  color:var(--blue-dark);
+  margin-bottom:12px;
+}
+
+.honor-item img{
+  width:100%;
+  height:300px;              
+  object-fit:cover;          
+  border-radius:12px;
+  margin-bottom:14px;
+  transition:transform .35s;
+  background:#e5e7eb;        
+}
+
+
+.honor-item:hover img{
+  transform:scale(1.03);
+}
+
+.honor-item p{
+  line-height:1.6;
+  color:#444;
+}
+
+/* ===== Footer ===== */
 footer{
   background:var(--blue-dark);
   color:#fff;
   text-align:center;
-  padding:30px 15px;
+  padding:35px 15px;
+  font-size:.95rem;
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -184,63 +197,60 @@ footer{
   <h2>社團沿革</h2>
   <div class="timeline">
     <div class="timeline-item">
-      <h3>創社初期（2007年）</h3>
+      <h3>創社初期（2004年）</h3>
       <p>由一群熱愛排球的學生自發成立勤益排球社，以推廣排球運動與凝聚同好為宗旨。</p>
     </div>
     <div class="timeline-item">
-      <h3>奠定基礎（2022－2024）</h3>
-      <p>建立固定訓練制度</p>
+      <h3>奠定基礎（2020－2022）</h3>
+      <p>建立固定訓練制度，逐步形成社團核心文化。</p>
     </div>
     <div class="timeline-item">
-      <h3>近年(2024-今)</h3>
-      <p>培養團隊精神與社團文化。</p>
+      <h3>近年發展（2024－今）</h3>
+      <p>持續培養團隊精神，並積極對外交流。</p>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>重要社長事蹟</h2>
-  <div class="president-grid">
-    <div class="president-card">
-      <h3>第 1 屆 社長</h3>
-      <span>2006－2007</span>
-      <p>建立社團制度，奠定訓練基礎。</p>
-    </div>
-    <div class="president-card">
-      <h3>第 16 屆 社長</h3>
-      <span>2023－2024</span>
-      <p>推動社群經營與社團形象建立。</p>
-    </div>
-    <div class="president-card">
-      <h3>第 17 屆 社長</h3>
-      <span>2024－2025</span>
-      <p>開始舉辦社內活動。</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>事蹟</h2>
+  <h2>獲獎事蹟</h2>
   <div class="honor-list">
+
     <div class="honor-item">
-      <h4>🏆 校友盃</h4>
-      <p>與過往學長姐們互相交流並切磋球技。</p>
+      <h4>🏆 113學年度 社團人氣獎</h4>
+      <img src="113人氣獎.jpg" alt="113人氣獎">
+      <p>感謝社員支持，讓排球社在 2024 年獲得高度肯定。</p>
     </div>
+
     <div class="honor-item">
-      <h4>🏐 校內賽事</h4>
-      <p>社團成員積極參與校內排球競賽，展現團隊默契。</p>
+      <h4>🏆 112學年度 社團人氣獎</h4>
+      <img src="112人氣獎.jpg" alt="112人氣獎"><br>
+      <p>持續凝聚向心力，展現社團活力。</p>
     </div>
+
     <div class="honor-item">
-      <h4>🤝 友善交流</h4>
-      <p>除了本國學生外，也會與外國學生一同交流打球。</p>
+      <h4>🏆 109學年度 最佳體育性社團</h4>
+      <img src="109最佳體育性社團.jpg" alt="最佳體育性社團">
+      <p>肯定社團長期推廣運動精神的努力。</p>
     </div>
+
+    <div class="honor-item">
+      <h4>🏆 107學年度 社團人氣獎</h4>
+      <img src="107人氣獎.jpg" alt="107人氣獎">
+      <p>展現排球社深厚的社團文化。</p>
+    </div>
+
+    <div class="honor-item">
+      <h4>🏆 94學年度 體育性第一名</h4>
+      <img src="94年體育性社團第一.jpg" alt="體育性第一">
+      <p>早期即展現卓越的體育表現。</p>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  <p>© 勤益排球社 Volleyball Club</p>
+  © 勤益排球社 Volleyball Club
 </footer>
-
 
 </body>
 </html>

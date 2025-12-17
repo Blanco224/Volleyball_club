@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>勤益排球社｜過往活動</title>
+
 <style>
 :root{
   --blue-dark:#0f4c81;
@@ -12,15 +13,30 @@
   --bg:#f8fafc;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial;}
-body{background:var(--bg);color:#333}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Segoe UI",Arial;
+}
 
+body{
+  background:var(--bg);
+  color:#333;
+}
+
+/* ===== Header ===== */
 header{
   background:linear-gradient(90deg,var(--blue-dark),var(--blue));
   color:#fff;
-  padding:20px;
+  padding:22px;
   text-align:center;
   position:relative;
+}
+
+header h1{
+  font-size:2.2rem;
+  letter-spacing:3px;
 }
 
 .back-home{
@@ -37,17 +53,11 @@ header{
 }
 
 .back-home:hover{
-  background:rgba(250,204,21,0.8);
+  background:rgba(250,204,21,0.9);
   color:#0f4c81;
 }
 
-.back-home:hover{
-  background:rgba(250,204,21,0.8);
-  color:#0f4c81;
-}
-header h1{font-size:2.2rem;letter-spacing:3px}
-header p{opacity:.9;margin-top:8px}
-
+/* ===== Section ===== */
 section{
   max-width:1000px;
   margin:auto;
@@ -88,7 +98,9 @@ h2::before{
   transition:.3s;
 }
 
-.activity-card:hover{transform:translateY(-6px)}
+.activity-card:hover{
+  transform:translateY(-6px);
+}
 
 .activity-media img,
 .activity-media video{
@@ -122,12 +134,38 @@ h2::before{
   margin-top:12px;
   background:var(--yellow);
   color:#0f4c81;
-  padding:4px 10px;
+  padding:4px 12px;
   border-radius:20px;
   font-size:.85rem;
   font-weight:bold;
 }
 
+/* ===== Accordion ===== */
+.accordion-btn{
+  width:100%;
+  text-align:left;
+  background:#f1f5f9;
+  border:none;
+  padding:14px 18px;
+  margin-bottom:10px;
+  font-weight:bold;
+  font-size:1rem;
+  cursor:pointer;
+  border-left:6px solid var(--blue-dark);
+  border-radius:8px;
+  transition:.2s;
+}
+
+.accordion-btn:hover{
+  background:#eaf1f8;
+}
+
+.accordion-content{
+  display:none;
+  margin-bottom:30px;
+}
+
+/* ===== Footer ===== */
 footer{
   background:var(--blue-dark);
   color:#fff;
@@ -137,10 +175,13 @@ footer{
 
 @media(max-width:600px){
   .activity-media img,
-  .activity-media video{height:180px}
+  .activity-media video{
+    height:180px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -148,8 +189,9 @@ footer{
   <a href="index.html" class="back-home">回到首頁</a>
 </header>
 
+<!-- ===== 近期活動 ===== -->
 <section>
-  <h2>活動紀錄</h2>
+  <h2>近期活動</h2>
 
   <div class="activity-grid">
 
@@ -228,9 +270,143 @@ footer{
   </div>
 </section>
 
+<!-- ===== 歷年活動（折疊） ===== -->
+<section>
+  <h2>過往活動</h2>
+
+  <!--校友盃-->
+  <button class="accordion-btn">校友盃</button>
+  <div class="accordion-content">
+    <div class="activity-grid">
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="113校友盃合照.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2024/6/8</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="113校友盃1.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2024/6/8</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="112校友盃合照.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2023/4/16</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="112校友盃1.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2023/4/16</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="108校友盃合照.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2019/11/30</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="108校友盃1.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>校友盃</h3>
+          <span>2019/11/30</span>
+          <p>與歷屆學長姊交流切磋。</p>
+          <div class="tag">交流</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!--聖誕排球盃-->
+  <button class="accordion-btn">聖誕排球盃</button>
+  <div class="accordion-content">
+    <div class="activity-grid">
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="113聖誕排球盃合照.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>聖誕排球盃</h3>
+          <span>2024/12/25</span>
+          <p>活動人員大合照。</p>
+          <div class="tag">比賽</div>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-media">
+          <img src="113聖誕排球盃1.jpg">
+        </div>
+        <div class="activity-content">
+          <h3>聖誕排球盃</h3>
+          <span>2024/12/25</span>
+          <p>比賽畫面。</p>
+          <div class="tag">比賽</div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
 <footer>
-  <p>© 勤益排球社 Volleyball Club</p>
+  © 勤益排球社 Volleyball Club
 </footer>
+
+<!-- ===== Accordion JS ===== -->
+<script>
+  const accBtns = document.querySelectorAll('.accordion-btn');
+
+  accBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+
+      document.querySelectorAll('.accordion-content').forEach(c => {
+        if (c !== content) c.style.display = 'none';
+      });
+
+      content.style.display =
+        content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
 
 </body>
 </html>
