@@ -124,6 +124,76 @@ ul.officers li .desc{
 .accordion-content li{
   padding:5px 0;
 }
+
+/* ===== 幹部字卡 ===== */
+.officer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.officer-card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
+  text-align:center;
+}
+
+.officer-card:hover{
+  transform:translateY(-6px);
+}
+
+.officer-photo{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  background:#ddd;
+}
+
+.officer-body{
+  padding:18px;
+}
+
+.officer-body h3{
+  color:var(--blue-dark);
+  margin-bottom:4px;
+}
+
+.officer-body span{
+  display:block;
+  font-weight:bold;
+  margin-bottom:6px;
+}
+
+.officer-body p{
+  font-size:.9rem;
+  color:#555;
+  line-height:1.5;
+  margin-bottom:10px;
+}
+
+.contact{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  font-size:.9rem;
+}
+
+.contact a{
+  text-decoration:none;
+  color:#0f4c81;
+  background:#f1f5f9;
+  padding:6px 10px;
+  border-radius:20px;
+  transition:.2s;
+}
+
+.contact a:hover{
+  background:var(--yellow);
+}
+
 footer{
   background:var(--blue-dark);
   color:#fff;
@@ -140,15 +210,96 @@ footer{
 
 <section>
   <h2>現任幹部</h2>
-  <ul class="officers">
-    <li>社長：<span>阮郁心</span><span class="desc">負責整體社團規劃與對外聯繫</span></li>
-    <li>副社：<span>蘇偉達</span><span class="desc">協助社長管理社務及活動籌劃</span></li>
-    <li>活動：<span>蔡佳穎</span><span class="desc">策劃與執行各項社團活動</span></li>
-    <li>美宣：<span>廖家曼</span><span class="desc">管理並經營社團社群媒體帳號</span></li>
-    <li>器材：<span>邱子玄</span><span class="desc">管理排球及場地器材，確保使用安全</span></li>
-    <li>總務：<span>胡雅惠</span><span class="desc">負責社團收支及經費管理</span></li>
-    <li>機動：<span>黃俊傑</span><span class="desc">負責隨時幫助並處理社內大小事</span></li>
-  </ul>
+
+  <div class="officer-grid">
+
+    <div class="officer-card">
+      <img src="社長.jpg" class="officer-photo" alt="社長">
+      <div class="officer-body">
+        <span>社長</span>
+        <h3>阮郁心</h3>
+        <p>負責整體社團規劃、對外聯繫與方向決策。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/blanco.___.224/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="副社.jpg" class="officer-photo" alt="副社">
+      <div class="officer-body">
+        <span>副社</span>
+        <h3>蘇偉達</h3>
+        <p>協助社長處理社務，並支援活動規劃與執行。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/weida1222/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="活動.jpg" class="officer-photo" alt="活動">
+      <div class="officer-body">
+        <span>活動</span>
+        <h3>蔡佳穎</h3>
+        <p>負責策劃、安排與執行各項社團活動。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/jiaying_01_31/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="美宣.png" class="officer-photo" alt="美宣">
+      <div class="officer-body">
+        <span>美宣</span>
+        <h3>廖家曼</h3>
+        <p>經營社群平台與活動視覺設計。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/_nvi.yy_/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="器材.jpg" class="officer-photo" alt="器材">
+      <div class="officer-body">
+        <span>器材</span>
+        <h3>邱子玄</h3>
+        <p>管理排球與場地器材，確保使用安全。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/qzx03_08/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="總務.jpg" class="officer-photo" alt="總務">
+      <div class="officer-body">
+        <span>總務</span>
+        <h3>胡雅惠</h3>
+        <p>負責社團經費收支與帳務管理。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/hyh___24/">IG</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="officer-card">
+      <img src="機動.jpg" class="officer-photo" alt="機動">
+      <div class="officer-body">
+        <span>機動</span>
+        <h3>黃俊傑</h3>
+        <p>隨時支援社內各項事務與活動現場。</p>
+        <div class="contact">
+          <a href="https://www.instagram.com/jluffy_7_friend/">IG</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 </section>
 
 <section>
