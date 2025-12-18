@@ -165,6 +165,32 @@ h2::before{
   margin-bottom:30px;
 }
 
+/* ===== 活動橫向瀏覽（通用） ===== */
+.activity-scroll{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding-bottom:10px;
+  scroll-snap-type:x mandatory;
+}
+
+.activity-scroll::-webkit-scrollbar{
+  height:8px;
+}
+
+.activity-scroll::-webkit-scrollbar-thumb{
+  background:#cbd5e1;
+  border-radius:4px;
+}
+
+.activity-scroll .activity-card{
+  min-width:260px;
+  flex:0 0 auto;
+  scroll-snap-align:start;
+}
+
+
+
 /* ===== Footer ===== */
 footer{
   background:var(--blue-dark);
@@ -270,89 +296,92 @@ footer{
   </div>
 </section>
 
-<!-- ===== 歷年活動（折疊） ===== -->
+<!-- ===== 歷年活動===== -->
 <section>
   <h2>過往活動</h2>
 
   <!--校友盃-->
-  <button class="accordion-btn">校友盃</button>
-  <div class="accordion-content">
-    <div class="activity-grid">
+  <!-- 校友盃 -->
+<button class="accordion-btn">校友盃</button>
+<div class="accordion-content">
 
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="113校友盃合照.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2024/6/8</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
+  <div class="activity-scroll">
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="113校友盃合照.jpg">
       </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="113校友盃1.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2024/6/8</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2024/6/8</span>
+        <p>與歷屆學長姊交流切磋。</p>
+        <div class="tag">交流</div>
       </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="112校友盃合照.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2023/4/16</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="112校友盃1.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2023/4/16</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="108校友盃合照.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2019/11/30</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="108校友盃1.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2019/11/30</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
     </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="113校友盃1.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2024/6/8</span>
+        <p>比賽與互動畫面。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="112校友盃合照.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2023/4/16</span>
+        <p>校友回娘家交流。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="112校友盃1.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2023/4/16</span>
+        <p>精彩賽事畫面。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="108校友盃合照.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2019/11/30</span>
+        <p>歷屆校友大合照。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="108校友盃1.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2019/11/30</span>
+        <p>比賽紀錄。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
   </div>
+</div>
+
 
   <!--聖誕排球盃-->
   <button class="accordion-btn">聖誕排球盃</button>

@@ -179,6 +179,36 @@ footer{
     height:180px;
   }
 }
+
+/* ===== 校友盃橫向滑動 ===== */
+.horizontal-scroll{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  padding:10px 6px 20px;
+  scroll-snap-type:x mandatory;
+}
+
+.horizontal-scroll::-webkit-scrollbar{
+  height:8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb{
+  background:var(--blue);
+  border-radius:10px;
+}
+
+.horizontal-scroll .activity-card{
+  flex:0 0 auto;
+  width:260px;
+  scroll-snap-align:start;
+}
+
+.horizontal-scroll .activity-media img{
+  height:180px;
+  object-fit:cover;
+}
+
 </style>
 </head>
 
@@ -276,15 +306,50 @@ footer{
 
   <button class="accordion-btn">2024 年</button>
   <div class="accordion-content">
-    <div class="activity-grid">
+  <div class="horizontal-scroll">
 
-      <div class="activity-card">
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="113校友盃合照.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2024/6/8</span>
+        <p>與歷屆學長姊交流切磋。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="113校友盃1.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2024/6/8</span>
+        <p>與歷屆學長姊交流切磋。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+
+    <div class="activity-card">
+      <div class="activity-media">
+        <img src="112校友盃合照.jpg">
+      </div>
+      <div class="activity-content">
+        <h3>校友盃</h3>
+        <span>2023/4/16</span>
+        <p>與歷屆學長姊交流切磋。</p>
+        <div class="tag">交流</div>
+      </div>
+    </div>
+    <div class="activity-card">
         <div class="activity-media">
-          <img src="114校友盃照片.jpg">
+          <img src="113校友盃1.jpg">
         </div>
         <div class="activity-content">
           <h3>校友盃</h3>
-          <span>2024 / 12 / 13</span>
+          <span>2024/6/8</span>
           <p>與歷屆學長姊交流切磋。</p>
           <div class="tag">交流</div>
         </div>
@@ -292,27 +357,21 @@ footer{
 
       <div class="activity-card">
         <div class="activity-media">
-          <img src="114校友盃照片.jpg">
+          <img src="112校友盃合照.jpg">
         </div>
         <div class="activity-content">
           <h3>校友盃</h3>
-          <span>2024 / 12 / 13</span>
+          <span>2023/4/16</span>
           <p>與歷屆學長姊交流切磋。</p>
           <div class="tag">交流</div>
         </div>
       </div>
 
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="114校友盃照片.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2024 / 12 / 13</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
+    <!-- 繼續加就好 -->
+
+  </div>
+</div>
+
 
     </div>
   </div>
