@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>勤益排球社｜過往活動</title>
+<title>勤益排球社</title>
 
 <style>
 :root{
@@ -27,37 +27,91 @@ body{
 
 /* ===== Header ===== */
 header{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:15px 25px;
   background:linear-gradient(90deg,var(--blue-dark),var(--blue));
   color:#fff;
-  padding:22px;
-  text-align:center;
-  position:relative;
 }
 
-header h1{
-  font-size:2.2rem;
+/* LOGO 真正置中 */
+.logo{
+  grid-column:2;
+  text-align:center;
+  font-size:1.7rem;
+  font-weight:800;
   letter-spacing:3px;
 }
 
-.back-home{
-  position:absolute;
-  right:20px;
-  bottom:20px;
+/* ===== Nav ===== */
+nav{
+  grid-column:3;
+  justify-self:end;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:22px;
+}
+
+nav a{
   color:#fff;
   text-decoration:none;
   font-weight:bold;
-  background:rgba(255,255,255,0.15);
-  padding:8px 16px;
-  border-radius:20px;
   transition:.2s;
 }
 
-.back-home:hover{
-  background:rgba(250,204,21,0.9);
-  color:#0f4c81;
+nav a:hover{
+  color:var(--yellow);
 }
 
-/* ===== Section ===== */
+/* ===== Hamburger ===== */
+.hamburger{
+  display:none;
+  cursor:pointer;
+}
+
+.hamburger span{
+  display:block;
+  width:26px;
+  height:3px;
+  background:#fff;
+  margin:5px 0;
+  border-radius:2px;
+}
+
+/* ===== Mobile ===== */
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:100%;
+    right:0;
+    width:220px;
+    background:var(--blue-dark);
+    display:none;
+  }
+
+  nav.active{
+    display:block;
+  }
+
+  nav ul{
+    flex-direction:column;
+    padding:15px;
+    gap:15px;
+  }
+
+  .hamburger{
+    display:block;
+    grid-column:3;
+    justify-self:end;
+  }
+}
+
+/* ===== Sections ===== */
 section{
   max-width:1000px;
   margin:auto;
@@ -67,7 +121,7 @@ section{
 h2{
   font-size:1.8rem;
   color:var(--blue-dark);
-  margin-bottom:30px;
+  margin-bottom:18px;
   position:relative;
 }
 
@@ -83,320 +137,156 @@ h2::before{
   border-radius:3px;
 }
 
-/* ===== 活動卡片 ===== */
-.activity-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+p{
+  line-height:1.8;
 }
 
-.activity-card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,.08);
+/* ===== Photo Wall ===== */
+.photo-area{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.photo-area img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
   transition:.3s;
 }
 
-.activity-card:hover{
-  transform:translateY(-6px);
+.photo-area img:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-.activity-media img,
-.activity-media video{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  background:#000;
-}
-
-.activity-content{
-  padding:18px;
-}
-
-.activity-content h3{
-  color:var(--blue-dark);
-  margin-bottom:6px;
-}
-
-.activity-content span{
-  font-size:.9rem;
-  color:#666;
-}
-
-.activity-content p{
-  margin-top:10px;
-  line-height:1.6;
-}
-
-.tag{
-  display:inline-block;
-  margin-top:12px;
-  background:var(--yellow);
-  color:#0f4c81;
-  padding:4px 12px;
-  border-radius:20px;
-  font-size:.85rem;
-  font-weight:bold;
-}
-
-/* ===== Accordion ===== */
-.accordion-btn{
-  width:100%;
-  text-align:left;
-  background:#f1f5f9;
-  border:none;
-  padding:14px 18px;
-  margin-bottom:10px;
-  font-weight:bold;
-  font-size:1rem;
-  cursor:pointer;
-  border-left:6px solid var(--blue-dark);
-  border-radius:8px;
-  transition:.2s;
-}
-
-.accordion-btn:hover{
-  background:#eaf1f8;
-}
-
-.accordion-content{
-  display:none;
-  margin-bottom:30px;
+/* ===== Info Card ===== */
+.info-box{
+  background:#fff;
+  padding:25px;
+  border-radius:16px;
+  border-left:8px solid var(--yellow);
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+  font-size:1.05rem;
 }
 
 /* ===== Footer ===== */
 footer{
   background:var(--blue-dark);
   color:#fff;
-  text-align:center;
-  padding:30px 15px;
+  padding:30px 20px;
 }
 
-@media(max-width:600px){
-  .activity-media img,
-  .activity-media video{
-    height:180px;
-  }
-}
-
-/* ===== 校友盃橫向滑動 ===== */
-.horizontal-scroll{
+/* 聯絡列 */
+.footer-contact{
   display:flex;
-  gap:20px;
-  overflow-x:auto;
-  padding:10px 6px 20px;
-  scroll-snap-type:x mandatory;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap;
 }
 
-.horizontal-scroll::-webkit-scrollbar{
-  height:8px;
+.footer-contact p{
+  font-weight:bold;
+  letter-spacing:2px;
 }
 
-.horizontal-scroll::-webkit-scrollbar-thumb{
-  background:var(--blue);
-  border-radius:10px;
+/* 聯絡按鈕 */
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,.15);
+  padding:10px 20px;
+  border-radius:30px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
 }
 
-.horizontal-scroll .activity-card{
-  flex:0 0 auto;
-  width:260px;
-  scroll-snap-align:start;
+.contact-item img{
+  width:24px;
+  height:24px;
 }
 
-.horizontal-scroll .activity-media img{
-  height:180px;
-  object-fit:cover;
+.contact-item:hover{
+  background:var(--yellow);
+  color:#000;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>過往活動</h1>
-  <a href="index.html" class="back-home">回到首頁</a>
+  <div></div>
+
+  <div class="logo">勤益排球社</div>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav id="menu">
+    <ul>
+      <li><a href="#">首頁</a></li>
+      <li><a href="pm.html">幹部資訊</a></li>
+      <li><a href="active.html">過往活動</a></li>
+      <li><a href="pass.html">歷史榮耀</a></li>
+    </ul>
+  </nav>
 </header>
 
-<!-- ===== 近期活動 ===== -->
 <section>
-  <h2>近期活動</h2>
+  <h2>排球社宗旨</h2>
+  <p>
+    推廣排球運動，讓每位社員都能在球場上找到屬於自己的熱情與定位，是我們成立社團的初衷。
+    我們希望透過規律訓練、多元活動與團隊合作，培養彼此間的默契與信任，
+    讓社員在運動中結交夥伴、累積經驗，並在一次次挑戰與成長中，
+    建立自信與對排球的長久熱愛。
+  </p>
+</section>
 
-  <div class="activity-grid">
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="巨型排球盃.jpg" alt="巨排排球盃">
-      </div>
-      <div class="activity-content">
-        <h3>巨型排球盃</h3>
-        <span>2025/4/22</span>
-        <p>排球類的趣味競賽。</p>
-        <div class="tag">趣味競賽</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="黑幕排球盃.jpg" alt="黑幕排球盃">
-      </div>
-      <div class="activity-content">
-        <h3>黑幕排球盃</h3>
-        <span>2025/5/28</span>
-        <p>遮住網子，更難預判對手進攻位置及防守佔位。</p>
-        <div class="tag">趣味競賽</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="社團博覽會.jpg" alt="博覽會">
-      </div>
-      <div class="activity-content">
-        <h3>社團博覽會</h3>
-        <span>2025/9/17</span>
-        <p>向新進入大學的學弟妹們推廣排球社。</p>
-        <div class="tag">推廣</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="114新生排球盃.jpg" alt="新生盃">
-      </div>
-      <div class="activity-content">
-        <h3>2025新生排球盃</h3>
-        <span>2025/10/21</span>
-        <p>讓新生彼此熟悉並檢驗基礎課程結果。</p>
-        <div class="tag">比賽</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <video src="新生盃.mp4" controls></video>
-      </div>
-      <div class="activity-content">
-        <h3>新生盃</h3>
-        <span>2025/10/21</span>
-        <p>新生盃精彩比賽來回波回顧。</p>
-        <div class="tag">比賽</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="114校友盃照片.jpg" alt="友誼賽">
-      </div>
-      <div class="activity-content">
-        <h3>114校友盃</h3>
-        <span>2025/12/13</span>
-        <p>與歷屆學長姊相聚並一同交流排球技術。</p>
-        <div class="tag">交流</div>
-      </div>
-    </div>
-
+<section>
+  <h2>上課花絮</h2>
+  <div class="photo-area">
+    <img src="室內上課.jpg">
+    <img src="上課1.jpg">
+    <img src="上課2.jpg">
+    <img src="上課3.jpg">
   </div>
 </section>
 
-<!-- ===== 歷年活動（折疊） ===== -->
 <section>
-  <h2>歷年活動</h2>
-
-  <button class="accordion-btn">2024 年</button>
-  <div class="accordion-content">
-  <div class="horizontal-scroll">
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="113校友盃合照.jpg">
-      </div>
-      <div class="activity-content">
-        <h3>校友盃</h3>
-        <span>2024/6/8</span>
-        <p>與歷屆學長姊交流切磋。</p>
-        <div class="tag">交流</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="113校友盃1.jpg">
-      </div>
-      <div class="activity-content">
-        <h3>校友盃</h3>
-        <span>2024/6/8</span>
-        <p>與歷屆學長姊交流切磋。</p>
-        <div class="tag">交流</div>
-      </div>
-    </div>
-
-    <div class="activity-card">
-      <div class="activity-media">
-        <img src="112校友盃合照.jpg">
-      </div>
-      <div class="activity-content">
-        <h3>校友盃</h3>
-        <span>2023/4/16</span>
-        <p>與歷屆學長姊交流切磋。</p>
-        <div class="tag">交流</div>
-      </div>
-    </div>
-    <div class="activity-card">
-        <div class="activity-media">
-          <img src="113校友盃1.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2024/6/8</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
-      <div class="activity-card">
-        <div class="activity-media">
-          <img src="112校友盃合照.jpg">
-        </div>
-        <div class="activity-content">
-          <h3>校友盃</h3>
-          <span>2023/4/16</span>
-          <p>與歷屆學長姊交流切磋。</p>
-          <div class="tag">交流</div>
-        </div>
-      </div>
-
-    <!-- 繼續加就好 -->
-
+  <h2>社團時間與地點</h2>
+  <div class="info-box">
+    📍 勤益科技大學 排球場<br>
+    🕒 每週二、四 17:00–19:00
   </div>
-</div>
-
-
-    </div>
-  </div>
-
 </section>
 
 <footer>
-  © 勤益排球社 Volleyball Club
+  <div class="footer-contact">
+    <p>聯絡我們</p>
+    <a class="contact-item" href="https://www.instagram.com/ncut_18_volleyballclub/" target="_blank">
+      <img src="IG.png"> Instagram
+    </a>
+    <a class="contact-item" href="https://line.me/R/ti/g/akfDGwz9ca" target="_blank">
+      <img src="line.png"> LINE
+    </a>
+  </div>
 </footer>
 
-<!-- ===== Accordion JS ===== -->
 <script>
-  const accBtns = document.querySelectorAll('.accordion-btn');
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
 
-  accBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const content = btn.nextElementSibling;
-
-      document.querySelectorAll('.accordion-content').forEach(c => {
-        if (c !== content) c.style.display = 'none';
-      });
-
-      content.style.display =
-        content.style.display === 'block' ? 'none' : 'block';
-    });
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('active');
   });
 </script>
 
